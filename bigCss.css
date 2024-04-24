@@ -1,33 +1,77 @@
-body {
-    font-family: Arial, sans-serif;
-    display: grid;
-    place-items: center;
-    height: 100vh;
+
+/* Reset some default styles */
+body, h1, p, ul {
     margin: 0;
-    background-color: #f4f4f4;
+    padding: 0;
 }
 
-h1 {
-    font-size: 2em;
-    margin-bottom: 20px;
+/* Apply border, margin, and padding */
+header, main, footer {
+    border: 1px solid #ccc;
+    margin: 10px;
+    padding: 15px;
 }
 
-p {
-    font-size: 1.2em;
-    margin-bottom: 20px;
+/* Flexbox for horizontal navigation links */
+.nav-links ul {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none; /* Removing bullet points */
 }
 
-a {
+.nav-links li {
+    width: 100%;
+}
+
+.nav-links a {
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
     text-decoration: none;
-    color: #333;
-    padding: 10px 20px;
-    border: 1px solid #333;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    color: black;
 }
 
-a:hover {
-    background-color: #333;
-    color: #fff;
+/* Grid layout */
+body {
+    display: grid;
+    grid-template-areas:
+        "header"
+        "sidebar"
+        "main"
+        "footer";
+}
+
+header {
+    grid-area: header;
+}
+
+.nav-links {
+    grid-area: sidebar;
+}
+
+main {
+    grid-area: main;
+}
+
+footer {
+    grid-area: footer;
+}
+
+/* Media query for responsive design */
+@media (max-width: 500px) {
+    /* Change flex to block for vertical stacking of links */
+    .nav-links ul {
+        flex-direction: column;
+    }
+
+    /* Move sidebar under the main */
+    .nav-links {
+        order: 3;
+    }
+
+    /* Adjust width ratio between sidebar and footer */
+    footer {
+        grid-area: sidebar;
+    }
 }
 
