@@ -10,6 +10,7 @@ header, main, footer {
     border: 1px solid #ccc;
     margin: 10px;
     padding: 15px;
+    text-align: center;
 }
 
 /* Flexbox for horizontal navigation links */
