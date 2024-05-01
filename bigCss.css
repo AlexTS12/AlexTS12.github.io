@@ -1,12 +1,14 @@
 
 /* Reset some default styles */
-body, h1, p, ul {
+body, h1, p, ul 
+{
     margin: 0;
     padding: 0;
 }
 
 /* Apply border, margin, and padding */
-header, main, footer {
+header, main, footer, .sidebar
+{
     border: 1px solid #ccc;
     margin: 10px;
     padding: 15px;
@@ -14,17 +16,20 @@ header, main, footer {
 }
 
 /* Flexbox for horizontal navigation links */
-.nav-links ul {
+.nav-links ul 
+{
     display: flex;
     justify-content: space-between;
     list-style-type: none; /* Removing bullet points */
 }
 
-.nav-links li {
+.nav-links li
+{
     width: 100%;
 }
 
-.nav-links a {
+.nav-links a 
+{
     display: block;
     text-align: center;
     padding: 14px 16px;
@@ -33,7 +38,8 @@ header, main, footer {
 }
 
 /* Grid layout */
-body {
+body 
+{
     display: grid;
     grid-template-areas:
         "header"
@@ -42,41 +48,49 @@ body {
         "footer";
 }
 
-header {
+header 
+{
     grid-area: header;
 }
 
-.nav-links {
+.nav-links 
+{
     grid-area: sidebar;
 }
 
-sidebar{
-
+.sidebar
+{
         grid-area: sidebar;
 }
 
-main {
+main 
+{
     grid-area: main;
 }
 
-footer {
+footer 
+{
     grid-area: footer;
 }
 
 /* Media query for responsive design */
-@media (max-width: 500px) {
+@media (max-width: 500px) 
+{
     /* Change flex to block for vertical stacking of links */
-    .nav-links ul {
+    .nav-links ul 
+    {
         flex-direction: column;
     }
 
     /* Move sidebar under the main */
-    .nav-links {
+    .nav-links 
+    {
         order: 3;
     }
 
     /* Adjust width ratio between sidebar and footer */
-    footer {
+    footer 
+    {
         grid-area: sidebar;
     }
 }
