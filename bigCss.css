@@ -15,13 +15,6 @@ header, main, footer, aside
     text-align: center;
 }
 
-div {
-    background-color: lightgrey;
-    width: 300px;
-    border: 15px solid green;
-    padding: 50px;
-    margin: 20px;
-  }
 
 
 /* Flexbox for horizontal navigation links */
@@ -70,6 +63,15 @@ header
 main 
 {
     grid-area: main;
+    div 
+    {
+        background-color: lightgrey;
+        width: 300px;
+        border: 15px solid green;
+        padding: 50px;
+        margin: 20px;
+    }
+
 }
 
 footer 
