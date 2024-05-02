@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const submitBtn = document.getElementById('submitBtn');
     const searchNameInput = document.getElementById('searchName');
     const searchLicenseInput = document.getElementById('searchLicense');
-    const searchResultsDiv = document.getElementById('searchResults');
+    const searchResults = document.getElementById('searchResults');
 
     submitBtn.addEventListener('click', async function () {
         const name = searchNameInput.value.trim();
@@ -23,14 +23,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (error) {
             console.error('Error fetching user data:', error.message);
-            searchResultsDiv.innerHTML = '<p>Error fetching user data. Please try again later.</p>';
+            searchResults.innerHTML = '<p>Error fetching user data. Please try again later.</p>';
             return;
         }
 
         if (data && data.length > 0) {
             const user = data[0];
             // Display user information in searchResultsDiv
-            searchResultsDiv.innerHTML = `
+            searchResults.innerHTML = `
                 <div class="user-info-box">
                     <h2>User Information</h2>
                     <p>Name: ${persons.name}</p>
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 </div>
             `;
         } else {
-            searchResultsDiv.innerHTML = '<p>No user found.</p>';
+            searchResults.innerHTML = '<p>No user found.</p>';
         }
     });
 });
