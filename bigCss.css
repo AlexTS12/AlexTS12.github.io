@@ -85,7 +85,7 @@ footer
         order: 3;
     }
     /* Adjust width ratio between sidebar and footer */
-    footer 
+    main 
     {
         grid-area: sidebar;
     }
