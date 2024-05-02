@@ -14,9 +14,9 @@ document.addEventListener('DOMContentLoaded', function () {
         const name = searchNameInput.value.trim();
         const licenseNumber = searchLicenseInput.value.trim();
 
-        // Query Supabase for user data
+        // Query Supabase for user data from the "persons" table
         const { data, error } = await supabase
-            .from('users')
+            .from('persons')
             .select('*')
             .eq('name', name)
             .eq('licensenumber', licenseNumber);
