@@ -33,11 +33,11 @@ document.addEventListener('DOMContentLoaded', function () {
             searchResultsDiv.innerHTML = `
                 <div class="user-info-box">
                     <h2>User Information</h2>
-                    <p>Name: ${user.name}</p>
-                    <p>Address: ${user.address}</p>
-                    <p>Date of Birth: ${user.dob}</p>
-                    <p>License Number: ${user.licensenumber}</p>
-                    <p>Expiry Date: ${user.expirydate}</p>
+                    <p>Name: ${persons.name}</p>
+                    <p>Address: ${persons.address}</p>
+                    <p>Date of Birth: ${persons.dob}</p>
+                    <p>License Number: ${persons.licensenumber}</p>
+                    <p>Expiry Date: ${persons.expirydate}</p>
                 </div>
             `;
         } else {
