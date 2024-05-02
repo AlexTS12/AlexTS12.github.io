@@ -1,9 +1,9 @@
+import { createClient } from '@supabase/supabase-js';
 
+// Replace 'YOUR_SUPABASE_URL' and 'YOUR_SUPABASE_KEY' with your actual Supabase URL and API Key
+const supabase = createClient('https://tcobuzjvyosomsgksmlr.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRjb2J1emp2eW9zb21zZ2tzbWxyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTMzNTg5NzUsImV4cCI6MjAyODkzNDk3NX0.70kPyp7QAIoEQH0Ji2GkPRFYPfkBpIApriZcKKNmjRg');
 import { createClient } from '@supabase/supabase-js'
 
-const supabaseUrl = 'https://tcobuzjvyosomsgksmlr.supabase.co'
-const supabaseKey = process.env.SUPABASE_KEY
-const supabase = createClient(supabaseUrl, supabaseKey)
 document.addEventListener('DOMContentLoaded', function () {
     const submitBtn = document.getElementById('submitBtn');
     const searchNameInput = document.getElementById('searchName');
