@@ -4,11 +4,20 @@ const supabaseUrl = 'https://tcobuzjvyosomsgksmlr.supabase.co'
 const supabaseKey = process.env.SUPABASE_KEY
 const supabase = createClient(supabaseUrl, supabaseKey)
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', async function () {
+    const searchResults = document.getElementById('searchResults');
+
+    // Initialize user information box with an empty state
+    searchResults.innerHTML = `
+        <div class="user-info-box">
+            <h2>User Information</h2>
+            <p>No user found.</p>
+        </div>
+    `;
+
     const submitBtn = document.getElementById('submitBtn');
     const searchNameInput = document.getElementById('searchName');
     const searchLicenseInput = document.getElementById('searchLicense');
-    const searchResults = document.getElementById('searchResults');
 
     submitBtn.addEventListener('click', async function () {
         const name = searchNameInput.value.trim();
@@ -23,25 +32,30 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (error) {
             console.error('Error fetching user data:', error.message);
-            searchResults.innerHTML = '<p>Error fetching user data. Please try again later.</p>';
             return;
         }
 
         if (data && data.length > 0) {
             const user = data[0];
-            // Display user information in searchResultsDiv
+            // Update user information box
             searchResults.innerHTML = `
                 <div class="user-info-box">
                     <h2>User Information</h2>
-                    <p>Name: ${persons.name}</p>
-                    <p>Address: ${persons.address}</p>
-                    <p>Date of Birth: ${persons.dob}</p>
-                    <p>License Number: ${persons.licensenumber}</p>
-                    <p>Expiry Date: ${persons.expirydate}</p>
+                    <p>Name: ${user.name}</p>
+                    <p>Address: ${user.address}</p>
+                    <p>Date of Birth: ${user.dob}</p>
+                    <p>License Number: ${user.licensenumber}</p>
+                    <p>Expiry Date: ${user.expirydate}</p>
                 </div>
             `;
         } else {
-            searchResults.innerHTML = '<p>No user found.</p>';
+            // If no user found, display appropriate message
+            searchResults.innerHTML = `
+                <div class="user-info-box">
+                    <h2>User Information</h2>
+                    <p>No user found.</p>
+                </div>
+            `;
         }
     });
 });
