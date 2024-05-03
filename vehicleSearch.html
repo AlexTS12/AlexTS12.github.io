@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vehicle search page</title>
     <link rel="stylesheet" href="bigCss.css">
+    <script type="module" src="JavaScriptVehicleS.js"></script>
 </head>
 <body>
     <header>
@@ -19,11 +20,27 @@
     
 
     <main>
-        <label for="search">Search by number plate:</label>
-        <input type="text" id="search" name="search">
-        <br><br><label for="search">Search by vehicle make:</label>
-        <input type="text" id="search" name="search">
+        <style>
+            div.result {
+                width: 600px;
+                border: 15px solid rgb(99, 99, 99);
+                padding: 50px;
+                margin: 20px;
+                display: flex; /* Ensure the divs appear side by side */
+                flex-wrap: wrap; /* Allow wrapping if necessary */
+            }
+
+            div.person-info {
+                flex: 1; /* Equal width for each person's info */
+                margin: 10px; /* Add some space between the divs */
+            }
+        </style>
+        <label for="searchLicense">Search by number plate:</label>
+        <input type="text" id="searchLicense" name="searchLicense">
+        <br><br><label for="searchMake">Search by vehicle make:</label>
+        <input type="text" id="searchMake" name="searchMake">
         <br><br><button type="button" id="submitBtn">Submit</button>
+        <div class="result"></div>
     </main>
     <aside class="sidebar"> <!-- Changed sidebar to aside for semantic correctness -->
         <img src="BMW.jpg" alt="Sidebar Image" width="180"> <!-- Add your image path here -->
