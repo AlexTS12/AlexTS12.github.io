@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vehicle add page</title>
     <link rel="stylesheet" href="bigCss.css">
+
+    <script type="module" src="addCarJava.js"></script>
 </head>
 <body>
     <header>
@@ -18,6 +20,17 @@
     </header>
 
     <main>
+        <style>
+            div.result 
+            {
+                width: 600px;
+                border: 15px solid rgb(99, 99, 99);
+                padding: 50px;
+                margin: 20px;
+                display: flex; /* Ensure the divs appear side by side */
+                flex-wrap: wrap; /* Allow wrapping if necessary */
+            }
+        </style>
         <label for="addPlate">Car number plate:</label>
         <input type="text" id="addPlate" name="addPlate">
         <br><br><label for="addMake">Vehicle make:</label>
@@ -30,6 +43,7 @@
         <br><br><label for="addID">Owner ID:</label>
         <input type="text" id="addID" name="addID">
         <br><br><button type="button" id="submitBtn">Submit</button>
+        <div class="result"></div>
     </main>
     <aside class="sidebar"> <!-- Changed sidebar to aside for semantic correctness -->
         <img src="BMW.jpg" alt="Sidebar Image" width="180"> <!-- Add your image path here -->

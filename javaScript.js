@@ -33,7 +33,6 @@ document.getElementById('submitBtn').addEventListener('click', async () =>
         } 
         else 
         {
-            // Concatenate the information of each person into one string
             let resultHTML = '';
             data.forEach(person => 
                 {
